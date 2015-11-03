@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   }()
   
   @IBOutlet var tableView: UITableView!
-  var walks:Array<NSDate> = []
+    var currentDog: Dog!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,12 +28,30 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     tableView.registerClass(UITableViewCell.self,
       forCellReuseIdentifier: "Cell")
+    
+    let dogEntity = NSEntityDescription.entityForName("Dog", inManagedObjectContext: self.managedContext)
+    let dogName = "Fido"
+    let dogFetch = NSFetchRequest(entityName: "Dog")
+    dogFetch.predicate = NSPredicate(format: "name == %@", dogName)
+    
+    do {
+        let results = try managedContext.executeFetchRequest(dogFetch) as! [Dog]
+        if results.count > 0 {
+            self.currentDog = results.first
+        } else {
+            self.currentDog = Dog(entity: dogEntity!, insertIntoManagedObjectContext: self.managedContext)
+            self.currentDog.name = dogName
+            try managedContext.save()
+        }
+    } catch let error as NSError {
+        print("Error: \(error) " + "description \(error.localizedDescription)")
+    }
   }
   
   func tableView(tableView: UITableView,
     numberOfRowsInSection section: Int) -> Int {
       
-      return walks.count
+      return self.currentDog.walks!.count
   }
   
   func tableView(tableView: UITableView,
@@ -49,14 +67,27 @@ class ViewController: UIViewController, UITableViewDataSource {
       tableView.dequeueReusableCellWithIdentifier("Cell",
         forIndexPath: indexPath) as UITableViewCell
       
-      let date =  walks[indexPath.row]
-      cell.textLabel!.text = dateFormatter.stringFromDate(date)
+        let walk = self.currentDog.walks![indexPath.row] as! Walk
+        cell.textLabel!.text = self.dateFormatter.stringFromDate(walk.date!)
       
       return cell
   }
   
   @IBAction func add(sender: AnyObject) {
-    walks.append(NSDate())
+    let walkEntity = NSEntityDescription.entityForName("Walk", inManagedObjectContext: self.managedContext)
+    let walk = Walk(entity: walkEntity!, insertIntoManagedObjectContext: self.managedContext)
+    walk.date = NSDate()
+    
+    let walks = self.currentDog.walks!.mutableCopy() as! NSMutableOrderedSet
+    walks.addObject(walk)
+    self.currentDog.walks = walks.copy() as? NSOrderedSet
+    
+    do {
+        try managedContext.save()
+    } catch let error as NSError {
+        print("Could not save: \(error)")
+    }
+    
     tableView.reloadData()
   }
 }
