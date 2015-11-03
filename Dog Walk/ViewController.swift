@@ -8,8 +8,10 @@
 
 import UIKit
 
+import CoreData
+
 class ViewController: UIViewController, UITableViewDataSource {
-  
+    var managedContext: NSManagedObjectContext!
   lazy var dateFormatter: NSDateFormatter = {
     let formatter = NSDateFormatter()
     formatter.dateStyle = .ShortStyle
