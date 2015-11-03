@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8528F9A91BE927D600D53445 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528F9A81BE927D600D53445 /* CoreDataStack.swift */; };
 		8528F9AC1BE93D8100D53445 /* Dog Walk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8528F9AA1BE93D8100D53445 /* Dog Walk.xcdatamodeld */; };
+		8528F9B11BE93F1000D53445 /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528F9AD1BE93F1000D53445 /* Dog+CoreDataProperties.swift */; };
+		8528F9B21BE93F1000D53445 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528F9AE1BE93F1000D53445 /* Dog.swift */; };
+		8528F9B31BE93F1000D53445 /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528F9AF1BE93F1000D53445 /* Walk+CoreDataProperties.swift */; };
+		8528F9B41BE93F1000D53445 /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8528F9B01BE93F1000D53445 /* Walk.swift */; };
 		FEDA2D8D1B5923B200C68F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA2D8C1B5923B200C68F83 /* AppDelegate.swift */; };
 		FEDA2D8F1B5923B200C68F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA2D8E1B5923B200C68F83 /* ViewController.swift */; };
 		FEDA2D921B5923B200C68F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDA2D901B5923B200C68F83 /* Main.storyboard */; };
@@ -19,6 +23,10 @@
 /* Begin PBXFileReference section */
 		8528F9A81BE927D600D53445 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8528F9AB1BE93D8100D53445 /* Dog Walk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Dog Walk.xcdatamodel"; sourceTree = "<group>"; };
+		8528F9AD1BE93F1000D53445 /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "../Dog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8528F9AE1BE93F1000D53445 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dog.swift; path = ../Dog.swift; sourceTree = "<group>"; };
+		8528F9AF1BE93F1000D53445 /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "../Walk+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8528F9B01BE93F1000D53445 /* Walk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Walk.swift; path = ../Walk.swift; sourceTree = "<group>"; };
 		FEDA2D891B5923B200C68F83 /* Dog Walk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Walk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEDA2D8C1B5923B200C68F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEDA2D8E1B5923B200C68F83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +70,10 @@
 				8528F9AA1BE93D8100D53445 /* Dog Walk.xcdatamodeld */,
 				FEDA2D8E1B5923B200C68F83 /* ViewController.swift */,
 				8528F9A81BE927D600D53445 /* CoreDataStack.swift */,
+				8528F9AD1BE93F1000D53445 /* Dog+CoreDataProperties.swift */,
+				8528F9AE1BE93F1000D53445 /* Dog.swift */,
+				8528F9AF1BE93F1000D53445 /* Walk+CoreDataProperties.swift */,
+				8528F9B01BE93F1000D53445 /* Walk.swift */,
 				FEDA2D901B5923B200C68F83 /* Main.storyboard */,
 				FEDA2D931B5923B200C68F83 /* Assets.xcassets */,
 				FEDA2D951B5923B200C68F83 /* LaunchScreen.storyboard */,
@@ -141,6 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8528F9A91BE927D600D53445 /* CoreDataStack.swift in Sources */,
+				8528F9B31BE93F1000D53445 /* Walk+CoreDataProperties.swift in Sources */,
+				8528F9B11BE93F1000D53445 /* Dog+CoreDataProperties.swift in Sources */,
+				8528F9B21BE93F1000D53445 /* Dog.swift in Sources */,
+				8528F9B41BE93F1000D53445 /* Walk.swift in Sources */,
 				FEDA2D8F1B5923B200C68F83 /* ViewController.swift in Sources */,
 				8528F9AC1BE93D8100D53445 /* Dog Walk.xcdatamodeld in Sources */,
 				FEDA2D8D1B5923B200C68F83 /* AppDelegate.swift in Sources */,
