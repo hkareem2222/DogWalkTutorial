@@ -53,6 +53,27 @@ class ViewController: UIViewController, UITableViewDataSource {
       
       return self.currentDog.walks!.count
   }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            let walkToRemove = self.currentDog.walks![indexPath.row] as! Walk
+            
+            self.managedContext.deleteObject(walkToRemove)
+            
+            do {
+                try self.managedContext.save()
+            } catch let error as NSError {
+                print("Could not save: \(error)")
+            }
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
   
   func tableView(tableView: UITableView,
     titleForHeaderInSection section: Int) -> String? {
